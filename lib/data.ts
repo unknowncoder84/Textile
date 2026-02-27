@@ -1,0 +1,138 @@
+import { Product } from "./types"
+
+export const initialProducts: Product[] = [
+  {
+    id: "1",
+    name: "Royal Blue Mulberry Silk",
+    description:
+      "Premium mulberry silk with a lustrous sheen and incredibly smooth hand feel. Perfect for high-end garments, evening wear, and luxury accessories. This silk is woven from the finest Grade 6A mulberry cocoons.",
+    quantity: 150,
+    category: "Silk",
+    material: "100% Natural",
+    price_per_meter: 2450,
+    image_url: "/images/products/silk-royal.jpg",
+    status: "in_stock",
+    unit: "meters",
+    gsm: 85,
+    width: "44 inches",
+    created_at: "2025-12-01T10:00:00Z",
+  },
+  {
+    id: "2",
+    name: "Egyptian Cotton Percale",
+    description:
+      "Ultra-fine long-staple Egyptian cotton with a crisp, cool feel. Thread count of 400+ makes it ideal for premium bedding, dress shirts, and fine tailoring. Breathable and durable.",
+    quantity: 320,
+    category: "Cotton",
+    material: "100% Natural",
+    price_per_meter: 890,
+    image_url: "/images/products/cotton-white.jpg",
+    status: "in_stock",
+    unit: "meters",
+    gsm: 120,
+    width: "60 inches",
+    created_at: "2025-11-20T09:30:00Z",
+  },
+  {
+    id: "3",
+    name: "Belgian Flax Linen",
+    description:
+      "Sustainably grown Belgian flax linen with a beautiful natural drape. Pre-washed for softness while maintaining the characteristic linen texture. Ideal for summer wear and home furnishings.",
+    quantity: 85,
+    category: "Linen",
+    material: "Organic",
+    price_per_meter: 1650,
+    image_url: "/images/products/linen-natural.jpg",
+    status: "in_stock",
+    unit: "meters",
+    gsm: 160,
+    width: "54 inches",
+    created_at: "2025-11-15T14:00:00Z",
+  },
+  {
+    id: "4",
+    name: "Italian Emerald Velvet",
+    description:
+      "Luxurious Italian-made velvet with a deep, rich pile and stunning emerald color. Perfect for upholstery, curtains, and statement fashion pieces. The dense pile creates beautiful light play.",
+    quantity: 12,
+    category: "Velvet",
+    material: "Blended",
+    price_per_meter: 3200,
+    image_url: "/images/products/velvet-emerald.jpg",
+    status: "low_stock",
+    unit: "meters",
+    gsm: 320,
+    width: "58 inches",
+    created_at: "2025-10-28T11:15:00Z",
+  },
+  {
+    id: "5",
+    name: "French Blush Chiffon",
+    description:
+      "Ethereal French chiffon in a delicate blush pink. Lightweight and sheer with beautiful draping qualities. Ideal for bridal wear, evening gowns, and decorative overlays.",
+    quantity: 200,
+    category: "Chiffon",
+    material: "Blended",
+    price_per_meter: 1100,
+    image_url: "/images/products/chiffon-blush.jpg",
+    status: "in_stock",
+    unit: "meters",
+    gsm: 45,
+    width: "44 inches",
+    created_at: "2025-10-15T08:45:00Z",
+  },
+  {
+    id: "6",
+    name: "Scottish Highland Wool",
+    description:
+      "Heavy-weight Scottish wool in deep charcoal. Dense twill weave provides excellent warmth and durability. Perfect for winter coats, blazers, and premium outerwear.",
+    quantity: 0,
+    category: "Wool",
+    material: "100% Natural",
+    price_per_meter: 2800,
+    image_url: "/images/products/wool-charcoal.jpg",
+    status: "out_of_stock",
+    unit: "meters",
+    gsm: 380,
+    width: "60 inches",
+    created_at: "2025-09-20T16:30:00Z",
+  },
+  {
+    id: "7",
+    name: "Duchess Gold Satin",
+    description:
+      "High-sheen duchess satin with a substantial body and beautiful gold luster. Heavy enough to hold structured shapes yet fluid enough for elegant draping. Perfect for bridal and formal wear.",
+    quantity: 95,
+    category: "Satin",
+    material: "Premium Grade",
+    price_per_meter: 1950,
+    image_url: "/images/products/satin-gold.jpg",
+    status: "in_stock",
+    unit: "meters",
+    gsm: 200,
+    width: "48 inches",
+    created_at: "2025-09-10T12:00:00Z",
+  },
+  {
+    id: "8",
+    name: "Japanese Selvedge Denim",
+    description:
+      "Premium Japanese selvedge denim with a deep indigo dye. Shuttle-loom woven for a tighter, more durable weave with the characteristic self-finished edge. Perfect for premium jeans and jackets.",
+    quantity: 8,
+    category: "Denim",
+    material: "100% Natural",
+    price_per_meter: 1800,
+    image_url: "/images/products/denim-indigo.jpg",
+    status: "low_stock",
+    unit: "meters",
+    gsm: 350,
+    width: "32 inches",
+    created_at: "2025-08-25T10:30:00Z",
+  },
+]
+
+export function getStockStatus(quantity: number): Product["status"] {
+  if (quantity === 0) return "out_of_stock"
+  if (quantity <= 20) return "low_stock"
+  return "in_stock"
+}
